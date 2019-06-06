@@ -2,13 +2,20 @@
 #'
 #' This function creates a table with the information of the diferent datasets
 #' available to download from R in NARCCAP web site.
+#' The columns shows
+#' + Nombre de la variable
+#' + Abreviatura de la variable
+#' + Año de Inicio de los datos contenidos
+#' + Año final de los datos contenidos
+#' + Tamaño del archivo
+#' + Current or future
+
 #' @keywords datasets, download, data
 #' @export
 #' @examples
 #' ShowData()
 
 ShowData <- function(){
-
   urls <- "https://www.earthsystemgrid.org/dataset/narccap.crcm.output.ccsm.html"
   wp <- read_html(urls)
 
