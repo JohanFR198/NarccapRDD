@@ -30,7 +30,6 @@ ShowData <- function(){
     mutate_at(.vars=c("ext", "ext3"),tolower) %>% mutate_at(.vars=c("2"), toupper) ##Transformaciones para unificar formato
   cuadro <- NULL
   for ( i in 1: length(links1$ext)){
-    show(i)
     url <- paste0("https://www.earthsystemgrid.org/dataset/",links1$ext[i],"/file.html")
     webpage <- read_html(url)
 
@@ -72,6 +71,6 @@ ShowData <- function(){
   }
 
   colnames(cuadro) <- c("link", "Ab.Name", "Year", "P#","YearEnd","Full Name","Size","Table", "Time","M1", "M2", "M3" ) ##Da nombre a las columnas
-
-  View(select(cuadro,-c("link", "M1","M2","M3")))
+  Cuadro <- select(cuadro,-c("link", "M1","M2","M3"))
+  return(Cuadro)
 }
