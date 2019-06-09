@@ -1,6 +1,6 @@
 #' Download .nc datasets from Narccap
 #'
-#' This function downloads the specified datasets
+#' This function downloads the specified datasets from NARCCAP
 #' @keywords datasets, download, data
 #' @export
 #' @param table Is the table produced with the function ShowData()
