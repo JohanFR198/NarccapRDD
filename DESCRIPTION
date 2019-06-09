@@ -6,7 +6,8 @@ Description: What the package does (one paragraph).
 Depends: R (>= 3.5.0),
     rvest,
     tidyverse,
-    tibble
+    tibble,
+    curl
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
