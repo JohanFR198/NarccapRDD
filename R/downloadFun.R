@@ -3,16 +3,11 @@ DownloadDataF <-
            AbName,
            FromYear = 1968,
            ToYear = 2071) {
-    table=Cuadro
-    AbName="pr"
-    FromYear=1968
-    ToYear=1971
     cuadro1 <-
       table %>% filter(Ab.Name == AbName,
                        Year >= FromYear,
                        YearEnd <= ToYear,
                        Time == Time)
-    View(cuadro1)
     for (i in 1:length(cuadro1$link)) {
       curl_fetch_disk(
         paste0(
@@ -27,5 +22,3 @@ DownloadDataF <-
       )
     }
   }
-
-DownloadDataF(Cuadro, AbName="pr", FromYear = 1968, ToYear = 1971)
