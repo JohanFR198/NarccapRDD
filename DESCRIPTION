@@ -16,4 +16,7 @@ Imports: dplyr,
     rvest,
     tidyr,
     stringr,
-    tidyverse
+    tidyverse,
+    reshape2,
+    lubridate,
+    ncdf4

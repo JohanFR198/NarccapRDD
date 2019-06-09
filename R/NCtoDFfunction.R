@@ -25,25 +25,25 @@ NC2DF <- function(PATH){
 
   for(i in 1:length(listfilesregional)){
     show(paste0('Construccion datos mensuales-Regional-',i))
-    regional <- nc_open(paste0(dirbaseregional,listfilesregional[i]))  ##Leemos el archivo .nc utilizando la lista previamente creada
-    varreg_pre <- ncvar_get(regional,c1)
-    lonvar <- ncvar_get(regional,'lon')
-    latvar <- ncvar_get(regional,'lat')
-    xcvar <- ncvar_get(regional,'xc')
-    ycvar <- ncvar_get(regional,'yc')
-    timevar <- ncvar_get(regional,'time')  ##Hasta acá lo que se hace es obtener las variables espaciales, temporales y la de interés del archivo de datos
+    regional <- ncdf4::nc_open(paste0(dirbaseregional,listfilesregional[i]))  ##Leemos el archivo .nc utilizando la lista previamente creada
+    varreg_pre <- ncdf4::ncvar_get(regional,c1)
+    lonvar <- ncdf4::ncvar_get(regional,'lon')
+    latvar <- ncdf4::ncvar_get(regional,'lat')
+    xcvar <- ncdf4::ncvar_get(regional,'xc')
+    ycvar <- ncdf4::ncvar_get(regional,'yc')
+    timevar <- ncdf4::ncvar_get(regional,'time')  ##Hasta acá lo que se hace es obtener las variables espaciales, temporales y la de interés del archivo de datos
     blatitude <- c(min(latvar)-1.4,floor(max(latvar))+1.4)
     blatitudet <- rbind(blatitudet,blatitude)
     blongitude <- c(min(lonvar)-1.4,floor(max(lonvar))+1.4)
     blongitudet <- rbind(blongitudet,blongitude)
 
-    fechabase <- ymd('1968-01-01') ##Se establece la fecha desde la que comienza a contar el tiempo en el modelo
-    timevar <- fechabase+as.period(ddays(timevar)) ##Transforma la variable de tiempo a formato Año mes día
+    fechabase <- lubridate::ymd('1968-01-01') ##Se establece la fecha desde la que comienza a contar el tiempo en el modelo
+    timevar <- fechabase+lubridate::as.period(ddays(timevar)) ##Transforma la variable de tiempo a formato Año mes día
     dimnames(varreg_pre)[[1]] <- xcvar
     dimnames(varreg_pre)[[2]] <- ycvar
     dimnames(varreg_pre)[[3]] <- as.character(timevar) ##Define nombres a los ejes del conjunto de los datos
 
-    varreg_pre <- melt(varreg_pre) ##Reorganiza los datos
+    varreg_pre <- reshape2::melt(varreg_pre) ##Reorganiza los datos
 
     dimnames(latvar)[[1]] <- xcvar
     dimnames(lonvar)[[1]] <- xcvar
