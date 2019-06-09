@@ -18,7 +18,7 @@ DownloadDataF(table, path = " ", AbName, FromYear = 1968, ToYear = 2071)
 \item{ToYear}{The last year  of data sets}
 }
 \description{
-This function downloads the specified datasets
+This function downloads the specified datasets from NARCCAP
 }
 \examples{
 ###Not run
