@@ -2,15 +2,28 @@
 % Please edit documentation in R/downloadFun.R
 \name{DownloadDataF}
 \alias{DownloadDataF}
-\title{Show Narccap datasets available to download}
+\title{Download .nc datasets from Narccap}
 \usage{
 DownloadDataF(table, path = " ", AbName, FromYear = 1968, ToYear = 2071)
+}
+\arguments{
+\item{table}{Is the table produced with the function ShowData()}
+
+\item{path}{The directory where you are going to download the data, we recomend to create a new directory for each variable.}
+
+\item{AbName}{The abbreviate name of the variable you are going to download}
+
+\item{FromYear}{The initial year data sets}
+
+\item{ToYear}{The last year  of data sets}
 }
 \description{
 This function downloads the specified datasets
 }
 \examples{
-ShowData()
+###Not run
+table <- ShowData()
+DownloadDataF(table=table, path="~/Precipitation", AbName="pr", FromYear=1968, ToYear=1990)
 }
 \keyword{data}
 \keyword{datasets,}

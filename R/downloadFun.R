@@ -1,10 +1,17 @@
-#' Show Narccap datasets available to download
+#' Download .nc datasets from Narccap
 #'
 #' This function downloads the specified datasets
 #' @keywords datasets, download, data
 #' @export
+#' @param table Is the table produced with the function ShowData()
+#' @param path The directory where you are going to download the data, we recomend to create a new directory for each variable.
+#' @param AbName The abbreviate name of the variable you are going to download
+#' @param FromYear The initial year data sets
+#' @param ToYear The last year  of data sets
 #' @examples
-#' ShowData()
+#' ###Not run
+#' table <- ShowData()
+#' DownloadDataF(table=table, path="~/Precipitation", AbName="pr", FromYear=1968, ToYear=1990)
 
 DownloadDataF <-
   function(table, path=" ",
