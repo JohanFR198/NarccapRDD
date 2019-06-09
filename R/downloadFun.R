@@ -1,3 +1,11 @@
+#' Show Narccap datasets available to download
+#'
+#' This function downloads the specified datasets
+#' @keywords datasets, download, data
+#' @export
+#' @examples
+#' ShowData()
+
 DownloadDataF <-
   function(table, path=" ",
            AbName,

@@ -9,6 +9,13 @@ ShowData()
 \description{
 This function creates a table with the information of the diferent datasets
 available to download from R in NARCCAP web site.
+The columns shows
++ Nombre de la variable
++ Abreviatura de la variable
++ Año de Inicio de los datos contenidos
++ Año final de los datos contenidos
++ Tamaño del archivo
++ Current or future
 }
 \examples{
 ShowData()
