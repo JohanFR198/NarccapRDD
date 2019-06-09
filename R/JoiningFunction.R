@@ -22,9 +22,6 @@ joinRGdata <- function(var,varreg){
 
   indicesgrid <- over(pointsregionalsp,gridglobalsp) ##Se genera un indice para cada cuadrícula para agrupar los datos globales y regionales dentro de una misma cuadricula
 
-  plot(gridglobalsp) ##Lo grafica
-  plot(pointsregionalsp,add=T,col=2)
-
   pointsregional <- pointsregional %>% mutate(indicegrid = indicesgrid)
   gridglobal <- gridglobal %>% mutate(indicegrid=seq(1,dim(gridglobal)[1]))
 
