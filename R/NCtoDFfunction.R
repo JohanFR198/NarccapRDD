@@ -9,8 +9,7 @@
 #' @export
 #' @param PATH Is the directory where is located the .nc files of a same variable
 #' @examples
-#' ShowData()
-#'
+#' NC2DFR("~/RegionalModelPrecipitation")
 
 
 NC2DFR <- function(PATH){
@@ -80,3 +79,5 @@ NC2DFR <- function(PATH){
    varreg <- subset(varreg, !(Year==a[i]&Month==1&ID==ids[i]))
   }
 }
+
+

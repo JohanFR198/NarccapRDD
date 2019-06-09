@@ -23,7 +23,7 @@ This function downloads the specified datasets from NARCCAP
 \examples{
 ###Not run
 table <- ShowData()
-DownloadDataF(table=table, path="~/Precipitation", AbName="pr", FromYear=1968, ToYear=1990)
+DownloadDataF(table=table, path="~/RegionalModelPrecipitation", AbName="pr", FromYear=1968, ToYear=1990)
 }
 \keyword{data}
 \keyword{datasets,}
