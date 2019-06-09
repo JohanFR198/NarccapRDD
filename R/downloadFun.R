@@ -1,0 +1,31 @@
+DownloadDataF <-
+  function(table, path=" ",
+           AbName,
+           FromYear = 1968,
+           ToYear = 2071) {
+    table=Cuadro
+    AbName="pr"
+    FromYear=1968
+    ToYear=1971
+    cuadro1 <-
+      table %>% filter(Ab.Name == AbName,
+                       Year >= FromYear,
+                       YearEnd <= ToYear,
+                       Time == Time)
+    View(cuadro1)
+    for (i in 1:length(cuadro1$link)) {
+      curl_fetch_disk(
+        paste0(
+          "https://tds.ucar.edu/thredds/fileServer/datazone/narccap/DATA/CRCM/",
+          cuadro1$M3[i],
+          "/",
+          cuadro1$Table[i],
+          "/",
+          cuadro1$link[i]
+        ),
+        paste0("~/", cuadro1$link[i])
+      )
+    }
+  }
+
+DownloadDataF(Cuadro, AbName="pr", FromYear = 1968, ToYear = 1971)
