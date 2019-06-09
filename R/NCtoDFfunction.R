@@ -13,7 +13,7 @@
 #'
 
 
-NC2DF <- function(PATH){
+NC2DFR <- function(PATH){
   dirbaseregional <- PATH
   listfilesregional <- list.files(path = dirbaseregional)[str_detect(list.files(path = dirbaseregional),'nc$')]
   varreg <- NULL
