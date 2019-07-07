@@ -22,4 +22,5 @@ Imports: dplyr,
     tidyverse,
     reshape2,
     lubridate,
-    ncdf4
+    ncdf4,
+    sp
