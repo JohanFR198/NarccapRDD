@@ -16,4 +16,6 @@ Imports: dplyr,
     reshape2,
     lubridate,
     ncdf4,
-    sp
+    sp,
+    curl,
+    rlang

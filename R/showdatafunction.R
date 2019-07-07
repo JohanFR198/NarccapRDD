@@ -12,6 +12,7 @@
 
 #' @keywords datasets, download, data
 #' @export
+#' @import rlang dplyr  rvest  tidyr curl
 #' @examples
 #' ShowData()
 
