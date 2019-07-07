@@ -7,7 +7,7 @@
 #' @param PATH Is the directory where is located the .nc files of a same variable
 #' @param TYPE Is the origin of the data, set TYPE="R" if origin  is the regional  model or TYPE="G" if the  origin is  the global model
 #' @examples
-#' @import dplyr
+#' @import dplyr stringr  ncdf4 lubridate reshape2 sp
 #' NC2DFG("~/PrecipitationGlobalModelData",TYPE="G")
 #'
 
