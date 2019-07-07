@@ -55,6 +55,7 @@ ShowData <- function(){
     M3 <- rep(links1$ext2[i], length(links))
 
     df <- tibble(links) %>% separate(links, as.character(c(1:6)), remove = F)
+    options(warn=-1)
     if(is.na(df$`6`[1])==T){
       df <- df %>% select(-c("2","3","5","6")) %>% separate("4", c("Year","M"),4) %>% select(-"M") %>%
         mutate(`4`="NA")

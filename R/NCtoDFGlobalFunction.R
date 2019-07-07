@@ -1,37 +1,33 @@
-#' DESCRIPTION OF THE FUNCTION
-#'
-#'
-#'
-#'
+#' This  function coverts the .nc downloaded  from NARCCAP  in a data.frame object.
+#' This proccess could require
 #'
 
 #' @keywords datasets, download, data
 #' @export
 #' @param PATH Is the directory where is located the .nc files of a same variable
+#' @param TYPE Is the origin of the data, set TYPE="R" if origin  is the regional  model or TYPE="G" if the  origin is  the global model
 #' @examples
-#' NC2DFG("~/PrecipitationGlobalModelData")
+#' NC2DFG("~/PrecipitationGlobalModelData",TYPE="G")
 #'
 
-
-NC2DFG <- function(PATH) {
-  dirbaseglobal <- PATH
-  listfilesglobal <-
-    list.files(path = dirbaseglobal)[str_detect(list.files(path = dirbaseglobal), 'nc$')]
+NC2DF <- function(PATH, TYPE){
+  dirbase <- PATH
+  listfiles <-
+    list.files(path = dirbase)[str_detect(list.files(path = dirbase), 'nc$')]
   var <- NULL
 
-  c <- gsub("[^::A-Z::]", "", listfilesglobal[1])
-
-
+  c <- gsub("[^::A-Z::]", "", listfiles[1])
+  fecha <- ifelse(TYPE=="G", '1870-01-01','1968-01-01')
 
   for (i in 1:length(listfilesglobal)) {
-    show(paste0('Construccion datos mensuales-Global-', i))
-    vglobal <- nc_open(paste0(dirbaseglobal, listfilesglobal[i]))
+    show(paste0('Construccion datos mensuales-', i))
+    vglobal <- nc_open(paste0(dirbase, listfiles[i]))
     var_pre <- ncvar_get(vglobal, c)
     lonvar <- ncvar_get(vglobal, 'lon')
     latvar <- ncvar_get(vglobal, 'lat')
     timevar <- ncvar_get(vglobal, 'time')
 
-    fechabase <- ymd('1870-01-01')
+    fechabase <- ymd(fecha)
     timevar <- fechabase + as.period(ddays(timevar))
 
     dimnames(var_pre)[[1]] <- lonvar
@@ -53,4 +49,6 @@ NC2DFG <- function(PATH) {
 
     var <- bind_rows(var, var_pre)
   }
+assign(paste(c, TYPE),var)
+rm(var)
 }
