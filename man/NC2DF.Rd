@@ -2,7 +2,8 @@
 % Please edit documentation in R/NCtoDFGlobalFunction.R
 \name{NC2DF}
 \alias{NC2DF}
-\title{This  function coverts the .nc downloaded  from NARCCAP  in a data.frame object.}
+\title{This  function coverts the .nc downloaded  from NARCCAP  in a data.frame object.
+This proccess could require}
 \usage{
 NC2DF(PATH, TYPE)
 }
@@ -13,10 +14,10 @@ NC2DF(PATH, TYPE)
 }
 \description{
 This  function coverts the .nc downloaded  from NARCCAP  in a data.frame object.
+This proccess could require
 }
 \examples{
-NC2DFG("~/PrecipitationGlobalModelData",TYPE="G")
-
+NC2DF("~/PrecipitationGlobalModelData",TYPE="G")
 }
 \keyword{data}
 \keyword{datasets,}
