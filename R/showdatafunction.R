@@ -18,7 +18,7 @@
 
 ShowData <- function(){
   urls <- "https://www.earthsystemgrid.org/dataset/narccap.crcm.output.ccsm.html"
-  wp <- xml2::read_html(urls)
+  wp <- read_html(urls)
 
   links1 <- html_nodes(wp, ".paddingTop div a")
   links1 <- html_text(links1)
@@ -32,17 +32,17 @@ ShowData <- function(){
   cuadro <- NULL
   for ( i in 1: length(links1$ext)){
     url <- paste0("https://www.earthsystemgrid.org/dataset/",links1$ext[i],"/file.html")
-    webpage <- rvest::read_html(url)
+    webpage <- read_html(url)
 
     links_html <- rvest::html_nodes(webpage,'td:nth-child(2) a') ##LEE DE HTML
-    links <- rvest::html_text(links_html) ##PASO DE HTML A TEXTO
+    links <- html_text(links_html) ##PASO DE HTML A TEXTO
 
-    mb_html <- rvest::html_nodes(webpage,"td:nth-child(3)")
-    mb <- rvest::html_text(mb_html)
+    mb_html <- html_nodes(webpage,"td:nth-child(3)")
+    mb <- html_text(mb_html)
     Size <- mb[-1]
 
-    var_html <- rvest::html_nodes(webpage,'.checkbox label')  ##LEE DEL HTML LAS VARIABLES
-    var <- rvest::html_text(var_html)  ##PASA A TEXTO
+    var_html <- html_nodes(webpage,'.checkbox label')  ##LEE DEL HTML LAS VARIABLES
+    var <- html_text(var_html)  ##PASA A TEXTO
     var <- gsub("\n","",var) ##TRANSFORMACIONES
     var <- str_trim(var)
     var <- tibble(var) %>% separate(var, into=c("Name", "Full Name"), sep=6)
