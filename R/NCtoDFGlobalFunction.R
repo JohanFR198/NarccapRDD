@@ -19,7 +19,7 @@ NC2DF <- function(PATH, TYPE){
   c <- gsub("[^::A-Z::]", "", listfiles[1])
   fecha <- ifelse(TYPE=="G", '1870-01-01','1968-01-01')
 
-  for (i in 1:length(listfilesglobal)) {
+  for (i in 1:length(listfiles)) {
     show(paste0('Construccion datos mensuales-', i))
     vglobal <- nc_open(paste0(dirbase, listfiles[i]))
     var_pre <- ncvar_get(vglobal, c)
