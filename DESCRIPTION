@@ -8,7 +8,8 @@ License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
-Imports: dplyr,
+Imports: 
+    dplyr,
     rvest,
     tidyr,
     stringr,
@@ -20,4 +21,5 @@ Imports: dplyr,
     ncdf4,
     sp,
     curl,
-    rlang
+    rlang,
+    xml2
