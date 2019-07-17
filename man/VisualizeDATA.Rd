@@ -2,9 +2,9 @@
 % Please edit documentation in R/Visualizations.R
 \name{VisualizeDATA}
 \alias{VisualizeDATA}
-\title{VisualizeDATA function generates a map of the chosen variable in a specific month and year}
+\title{VisualizeDATA function generates a map or a plot of the chosen variable in a specific month and year}
 \usage{
-VisualizeDATA(datos, var, year, month)
+VisualizeDATA(datos, var, year, month, type)
 }
 \arguments{
 \item{var}{Name of the variable chosen to be visualized}
@@ -16,7 +16,7 @@ VisualizeDATA(datos, var, year, month)
 \item{data}{Data frame objet generated with NC2DF function}
 }
 \description{
-VisualizeDATA function generates a map of the chosen variable in a specific month and year
+VisualizeDATA function generates a map or a plot of the chosen variable in a specific month and year
 }
 \keyword{Climate}
 \keyword{Map,}

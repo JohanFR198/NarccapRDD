@@ -34,7 +34,7 @@ ShowData <- function(){
     url <- paste0("https://www.earthsystemgrid.org/dataset/",links1$ext[i],"/file.html")
     webpage <- read_html(url)
 
-    links_html <- rvest::html_nodes(webpage,'td:nth-child(2) a') ##LEE DE HTML
+    links_html <- html_nodes(webpage,'td:nth-child(2) a') ##LEE DE HTML
     links <- html_text(links_html) ##PASO DE HTML A TEXTO
 
     mb_html <- html_nodes(webpage,"td:nth-child(3)")

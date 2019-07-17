@@ -3,7 +3,7 @@
 \name{NC2DF}
 \alias{NC2DF}
 \title{This  function coverts the .nc downloaded  from NARCCAP  in a data.frame object.
-This proccess could require}
+This proccess may require high RAM capacity}
 \usage{
 NC2DF(PATH, TYPE)
 }
@@ -14,7 +14,7 @@ NC2DF(PATH, TYPE)
 }
 \description{
 This  function coverts the .nc downloaded  from NARCCAP  in a data.frame object.
-This proccess could require
+This proccess may require high RAM capacity
 }
 \examples{
 NC2DF("~/PrecipitationGlobalModelData",TYPE="G")
