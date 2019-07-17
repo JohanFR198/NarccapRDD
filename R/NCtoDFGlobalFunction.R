@@ -1,5 +1,5 @@
 #' This  function coverts the .nc downloaded  from NARCCAP  in a data.frame object.
-#' This proccess could require
+#' This proccess may require high RAM capacity
 #'
 
 #' @keywords datasets, download, data
@@ -49,6 +49,19 @@ NC2DF <- function(PATH, TYPE){
 
     var <- bind_rows(var, var_pre)
   }
+
+  a <- group_by(var,Year, Month, lat,lon) %>% summarize(n= n())
+  repetidos <- subset(a, n!=1)
+
+  a <- unique(repetidos$Year)
+
+  ids <- as.numeric(unique(var$ID))[-(length(a)+1)]
+  for (i in 1:length(ids)){
+    var <- subset(var, !(Year==a[i]&Month==1&ID==ids[i]))}
+
 assign(paste(c, TYPE),var)
 rm(var)
+
+
+
 }
