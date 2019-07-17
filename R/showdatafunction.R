@@ -18,7 +18,7 @@
 
 ShowData <- function(){
   urls <- "https://www.earthsystemgrid.org/dataset/narccap.crcm.output.ccsm.html"
-  wp <- rvest::read_html(urls)
+  wp <- read_html(urls)
 
   links1 <- html_nodes(wp, ".paddingTop div a")
   links1 <- html_text(links1)
