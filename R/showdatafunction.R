@@ -12,7 +12,7 @@
 
 #' @keywords datasets, download, data
 #' @export
-#' @import rlang dplyr rvest tidyr curl
+#' @import rlang dplyr rvest tidyr curl xml2
 #' @examples
 #' ShowData()
 
@@ -20,8 +20,8 @@ ShowData <- function(){
   urls <- "https://www.earthsystemgrid.org/dataset/narccap.crcm.output.ccsm.html"
   wp <- rvest::read_html(urls)
 
-  links1 <- rvest::html_nodes(wp, ".paddingTop div a")
-  links1 <- rvest::html_text(links1)
+  links1 <- html_nodes(wp, ".paddingTop div a")
+  links1 <- html_text(links1)
   links1 <- tibble(links1) %>% separate(links1, into=as.character(c(1:6)))%>%
     unite("ext3", c("5","6"), sep="", remove=F) %>% unite("ext2", c("3","4"), sep="-",remove=F) %>%
     unite("ext1", c("1","2"), sep=".", remove=F) %>%
