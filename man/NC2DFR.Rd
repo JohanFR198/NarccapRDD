@@ -2,8 +2,7 @@
 % Please edit documentation in R/NCtoDFfunction.R
 \name{NC2DFR}
 \alias{NC2DFR}
-\title{DESCRIPTION OF THE FUNCTION
-asdasfasgas}
+\title{DESCRIPTION OF THE FUNCTION}
 \usage{
 NC2DFR(PATH)
 }
@@ -12,7 +11,6 @@ NC2DFR(PATH)
 }
 \description{
 DESCRIPTION OF THE FUNCTION
-asdasfasgas
 }
 \examples{
 NC2DFR("~/RegionalModelPrecipitation")

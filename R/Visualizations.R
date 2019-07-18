@@ -1,5 +1,7 @@
 #' VisualizeDATA function generates a map or a plot of the chosen variable in a specific month and year
 #'
+#'
+#'
 
 #' @keywords Map, Visualization, Climate data
 #' @export

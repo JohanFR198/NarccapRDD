@@ -2,8 +2,6 @@
 #'
 #'
 #'
-#'
-#'
 
 #' @keywords datasets, download, data
 #' @export
@@ -11,7 +9,6 @@
 #' @param varreg is the dataframe produced by the function NC2DFG()
 #' @examples
 #' NC2DFR("~/RegionalModelPrecipitation")
-
 
 joinRGdata <- function(var,varreg){
   gridglobal <- var %>% select(lon,lat) %>% distinct(lat,lon) ##Genera la cuadricula de los datos del modelo global.

@@ -1,5 +1,4 @@
 #' DESCRIPTION OF THE FUNCTION
-#' asdasfasgas
 #'
 #'
 #'
