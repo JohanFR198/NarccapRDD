@@ -10,9 +10,6 @@
 #' @param month Number of the month you want
 #' @examples
 #' @import dplyr stringr  ncdf4 lubridate reshape2 sp ggmap ggplot2
-#'
-#'
-#'
 
 VisualizeDATA <- function(datos, var, year, month, type) {
   if (type == "counts") {

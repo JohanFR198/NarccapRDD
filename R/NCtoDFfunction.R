@@ -12,8 +12,6 @@
 #' @import tidyr dplyr stringr lubridate ncdf4 sp
 #' @examples
 #' NC2DFR("~/RegionalModelPrecipitation")
-#'
-
 
 NC2DFR <- function(PATH){
   dirbaseregional <- PATH

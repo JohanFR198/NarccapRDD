@@ -8,8 +8,6 @@
 #' @examples
 #' NC2DF("~/PrecipitationGlobalModelData")
 #' @import dplyr stringr  ncdf4 lubridate reshape2 sp
-#'
-
 
 NC2DFG <- function(PATH){
   dirbase <- PATH
