@@ -5,7 +5,8 @@
 #' @keywords datasets, download, data
 #' @export
 #' @param PATH Is the directory where is located the .nc files of a same variable
-#' @examples NC2DF("~/PrecipitationGlobalModelData")
+#' @examples
+#' NC2DF("~/PrecipitationGlobalModelData")
 #' @import dplyr stringr  ncdf4 lubridate reshape2 sp
 #'
 
