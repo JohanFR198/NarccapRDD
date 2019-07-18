@@ -2,6 +2,7 @@
 
 export(DownloadDataF)
 export(NC2DFG)
+export(NC2DFR)
 export(ShowData)
 export(VisualizeDATA)
 export(joinRGdata)

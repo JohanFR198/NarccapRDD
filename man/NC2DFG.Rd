@@ -15,7 +15,7 @@ This  function coverts the .nc downloaded  from NARCCAP  in a data.frame object.
 This proccess may require high RAM capacity
 }
 \examples{
-NC2DF("~/PrecipitationGlobalModelData",TYPE="G")
+NC2DF("~/PrecipitationGlobalModelData")
 }
 \keyword{data}
 \keyword{datasets,}
