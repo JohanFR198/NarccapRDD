@@ -6,8 +6,10 @@
 #'
 
 #' @keywords datasets, download, data
-#' @import tidyr dplyr stringr lubridate ncdf4 sp
+#' @export
+#'
 #' @param PATH Is the directory where is located the .nc files of a same variable
+#' @import tidyr dplyr stringr lubridate ncdf4 sp
 #' @examples
 #' NC2DFR("~/RegionalModelPrecipitation")
 #'
