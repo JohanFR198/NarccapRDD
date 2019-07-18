@@ -16,7 +16,6 @@ asdasfasgas
 }
 \examples{
 NC2DFR("~/RegionalModelPrecipitation")
-
 }
 \keyword{data}
 \keyword{datasets,}
