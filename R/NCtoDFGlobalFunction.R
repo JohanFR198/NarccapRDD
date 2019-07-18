@@ -43,7 +43,7 @@ NC2DFG <- function(PATH){
                          lon <= blongitude[2]) %>%
       mutate(Time = ymd(as.character(Time))) %>% filter(Time >= ymd('1968-01-01')) %>%
       mutate(Year = year(Time), Month = month(Time)) %>% group_by(Year, Month, lon, lat) %>%
-      summarise(m = mean(c)) %>% ungroup()
+      summarise(m = mean(eval(as.name(c)))) %>% ungroup()
 
     var <- bind_rows(var, var_pre)
   }
