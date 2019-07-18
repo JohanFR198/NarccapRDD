@@ -9,8 +9,6 @@ NC2DFG(PATH)
 }
 \arguments{
 \item{PATH}{Is the directory where is located the .nc files of a same variable}
-
-\item{TYPE}{Is the origin of the data, set TYPE="R" if origin  is the regional  model or TYPE="G" if the  origin is  the global model}
 }
 \description{
 This  function coverts the .nc downloaded  from NARCCAP  in a data.frame object.

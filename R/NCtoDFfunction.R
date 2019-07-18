@@ -1,5 +1,5 @@
 #' DESCRIPTION OF THE FUNCTION
-#'
+#' asdasfasgas
 #'
 #'
 #'
@@ -10,10 +10,10 @@
 #' @param PATH Is the directory where is located the .nc files of a same variable
 #' @examples
 #' NC2DFR("~/RegionalModelPrecipitation")
+#'
 
 
 NC2DFR <- function(PATH){
-  PATH <- "~/"
   dirbaseregional <- PATH
   listfilesregional <- list.files(path = dirbaseregional)[str_detect(list.files(path = dirbaseregional),'nc$')]
   varreg <- NULL
@@ -24,7 +24,6 @@ NC2DFR <- function(PATH){
   c1 <- paste(c1[1,1])
 
   for(i in 1:length(listfilesregional)){
-    i <- 1
     show(paste0('Construccion datos mensuales-Regional-',i))
     regional <- ncdf4::nc_open(paste0(dirbaseregional,listfilesregional[i]))  ##Leemos el archivo .nc utilizando la lista previamente creada
     varreg_pre <- ncdf4::ncvar_get(regional,c1)
