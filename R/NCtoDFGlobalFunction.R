@@ -10,18 +10,18 @@
 #' @import dplyr stringr  ncdf4 lubridate reshape2 sp
 #'
 
-NC2DF <- function(PATH, TYPE){
+
+NC2DFG <- function(PATH){
   dirbase <- PATH
-  listfiles <-
+  listfilesg <-
     list.files(path = dirbase)[str_detect(list.files(path = dirbase), 'nc$')]
   var <- NULL
 
-  c <- gsub("[^::A-Z::]", "", listfiles[1])
-  fecha <- ifelse(TYPE=="G", '1870-01-01','1968-01-01')
-
-  for (i in 1:length(listfiles)) {
+  c <- sub("\\_.*", "", listfilesg[1])
+  fecha <- '1870-01-01'
+  for (i in 1:length(listfilesg)) {
     show(paste0('Construccion datos mensuales-', i))
-    vglobal <- nc_open(paste0(dirbase, listfiles[i]))
+    vglobal <- nc_open(paste0(dirbase, listfilesg[i]))
     var_pre <- ncvar_get(vglobal, c)
     lonvar <- ncvar_get(vglobal, 'lon')
     latvar <- ncvar_get(vglobal, 'lat')
@@ -49,19 +49,7 @@ NC2DF <- function(PATH, TYPE){
 
     var <- bind_rows(var, var_pre)
   }
-
-  a <- group_by(var,Year, Month, lat,lon) %>% summarize(n= n())
-  repetidos <- subset(a, n!=1)
-
-  a <- unique(repetidos$Year)
-
-  ids <- as.numeric(unique(var$ID))[-(length(a)+1)]
-  for (i in 1:length(ids)){
-    var <- subset(var, !(Year==a[i]&Month==1&ID==ids[i]))}
-
-assign(paste(c, TYPE),var)
+assign(paste(c, "Global"),var)
 rm(var)
-
-
 
 }
