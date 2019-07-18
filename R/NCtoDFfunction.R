@@ -78,6 +78,8 @@ NC2DFR <- function(PATH){
   for (i in 1:length(ids)){
    varreg <- subset(varreg, !(Year==a[i]&Month==1&ID==ids[i]))
   }
+  assign(paste(c1, "Regional"),varreg)
+  rm(varreg)
 }
 
 
