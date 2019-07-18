@@ -12,10 +12,6 @@
 #' @examples
 #' NC2DFR("~/RegionalModelPrecipitation")
 
-library(ncdf4)
-library(tidyverse)
-
-
 NC2DFR <- function(PATH){
   dirbaseregional <- PATH
   listfilesregional <- list.files(path = dirbaseregional)[str_detect(list.files(path = dirbaseregional),'nc$')]
@@ -83,8 +79,8 @@ varreg_pre
   for (i in 1:length(ids)){
    varreg <- subset(varreg, !(Year==a[i]&Month==1&ID==ids[i]))
   }
-  assign(x=paste(c1, "Regional"),value=varreg)
-  rm(varreg)
+  assign(x=paste(c1, "Regional"),value=varreg, envir = .GlobalEnv)
 }
+
 
 
