@@ -12,6 +12,10 @@
 #' @examples
 #' NC2DFR("~/RegionalModelPrecipitation")
 
+library(ncdf4)
+library(tidyverse)
+
+
 NC2DFR <- function(PATH){
   dirbaseregional <- PATH
   listfilesregional <- list.files(path = dirbaseregional)[str_detect(list.files(path = dirbaseregional),'nc$')]
@@ -61,6 +65,8 @@ NC2DFR <- function(PATH){
 
     varreg_pre <- varreg_pre %>% left_join(latlondata,by = c('xc', 'yc')) %>%
       select(-xc,-yc) ##Une al cuadro las variables espaciales
+varreg_pre
+
 
 
     varreg_pre <- varreg_pre %>% mutate(ID = rep(i, dim(varreg_pre)[1]))
@@ -73,12 +79,11 @@ NC2DFR <- function(PATH){
   repetidos <- subset(a, n!=1)
 
   a <- unique(repetidos$Year)
-
   ids <- as.numeric(unique(varreg$ID))[-(length(a)+1)]
   for (i in 1:length(ids)){
    varreg <- subset(varreg, !(Year==a[i]&Month==1&ID==ids[i]))
   }
-  assign(paste(c1, "Regional"),varreg)
+  assign(x=paste(c1, "Regional"),value=varreg)
   rm(varreg)
 }
 
