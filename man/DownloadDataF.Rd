@@ -4,8 +4,7 @@
 \alias{DownloadDataF}
 \title{Download .nc datasets from Narccap}
 \usage{
-DownloadDataF(table, path = " ", AbName, FromYear = 1968,
-  ToYear = 2071)
+DownloadDataF(table, path = " ", AbName, FromYear = 1968, ToYear = 2071)
 }
 \arguments{
 \item{table}{Is the table produced with the function ShowData()}

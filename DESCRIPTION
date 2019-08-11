@@ -1,10 +1,9 @@
 Package: NarccapRDD
 Title: R workflow for NARCCAP  data
 Version: 1.0.0.0000
-Authors@R: person("Marcela", "Alfaro-Córdoba", email = "marcela.alfaro@ucr.ac.cr", role = c("aut", "cre"))
-Authors@R: person("Marcela", "Alfaro-Córdoba", email = "marcela.alfaro@ucr.ac.cr", role = c("aut", "cre"))
-Authors@R: person("Marcela", "Alfaro-Córdoba", email = "marcela.alfaro@ucr.ac.cr", role = c("aut", "cre"))
-
+Authors@R: c(person("Marcela", "Alfaro-Córdoba", email = "marcela.alfaro@ucr.ac.cr", role = c("aut", "cre")),
+            person("Marcela", "Alfaro-Córdoba", email = "marcela.alfaro@ucr.ac.cr", role = c("aut")),
+            person("Marcela", "Alfaro-Córdoba", email = "marcela.alfaro@ucr.ac.cr", role = c("aut")))
 Description: NarccapRDD provides  functions that make the proccess  of working  with NARCCAP data easier. This package has  functions  that download, manipulate, clean and help with the visualization of North american regional  and global climate models  data.
 Depends: R (>= 3.5.0)
 License: What license is it under?
