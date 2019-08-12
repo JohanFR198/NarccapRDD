@@ -2,7 +2,7 @@
 % Please edit documentation in R/JoiningFunction.R
 \name{joinRGdata}
 \alias{joinRGdata}
-\title{DESCRIPTION OF THE FUNCTION}
+\title{This function  joins the processed data from regional and global model in a Data Frame that matchs the points using grids}
 \usage{
 joinRGdata(var, varreg)
 }
@@ -12,11 +12,13 @@ joinRGdata(var, varreg)
 \item{varreg}{is the dataframe produced by the function NC2DFG()}
 }
 \description{
-DESCRIPTION OF THE FUNCTION
+This function  joins the processed data from regional and global model in a Data Frame that matchs the points using grids
 }
 \examples{
 NC2DFR("~/RegionalModelPrecipitation")
 }
 \keyword{data}
-\keyword{datasets,}
-\keyword{download,}
+\keyword{global}
+\keyword{joining,}
+\keyword{model,}
+\keyword{regional}

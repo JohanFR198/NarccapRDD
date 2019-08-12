@@ -1,9 +1,7 @@
-#' DESCRIPTION OF THE FUNCTION
-#'
-#'
+#' This function  joins the processed data from regional and global model in a Data Frame that matchs the points using grids
 #'
 
-#' @keywords datasets, download, data
+#' @keywords joining, global model, regional model, data
 #' @export
 #' @param var is the dataframe produced by the function NC2DFG()
 #' @param varreg is the dataframe produced by the function NC2DFG()
