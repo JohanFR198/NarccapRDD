@@ -51,7 +51,7 @@ NC2DFG <- function(PATH, VARNAME){
     var <- bind_rows(var, var_pre)
   }
 colnames(var) <- c("Year", "Month", "lon", "lat", VARNAME )
-assign(paste(c, "Global"),var)
+assign(paste(c, "Global"),var,envir = .GlobalEnv)
 rm(var)
 
 }
