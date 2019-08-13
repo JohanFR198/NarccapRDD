@@ -10,6 +10,8 @@
 #' @import dplyr stringr  ncdf4 lubridate reshape2 sp
 
 NC2DFG <- function(PATH){
+  blatitude <- c(19.12639, 74.40000)
+  blongitude <- c(198.6576, 326.4000)
   dirbase <- PATH
   listfilesg <-
     list.files(path = dirbase)[str_detect(list.files(path = dirbase), 'nc$')]

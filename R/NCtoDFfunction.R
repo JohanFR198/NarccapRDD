@@ -61,9 +61,6 @@ NC2DFR <- function(PATH){
 
     varreg_pre <- varreg_pre %>% left_join(latlondata,by = c('xc', 'yc')) %>%
       select(-xc,-yc) ##Une al cuadro las variables espaciales
-varreg_pre
-
-
 
     varreg_pre <- varreg_pre %>% mutate(ID = rep(i, dim(varreg_pre)[1]))
 
@@ -79,6 +76,7 @@ varreg_pre
   for (i in 1:length(ids)){
    varreg <- subset(varreg, !(Year==a[i]&Month==1&ID==ids[i]))
   }
+  colnames(varreg) <- c("Year", "Month", c1, "lat", "lon", "ID")
   assign(x=paste(c1, "Regional"),value=varreg, envir = .GlobalEnv)
 }
 
