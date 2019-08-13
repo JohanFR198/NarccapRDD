@@ -4,7 +4,7 @@
 \alias{narccapMAP}
 \title{narccapMAP function generates a map of the chosen variable in a specific month and year}
 \usage{
-narccapMAP(datos, var, year, month, type)
+narccapMAP(datos, var, year, month)
 }
 \arguments{
 \item{var}{Name of the variable chosen to be visualized}

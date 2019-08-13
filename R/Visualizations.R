@@ -13,7 +13,7 @@
 #' @examples
 #' @import dplyr stringr  ncdf4 lubridate reshape2 sp ggmap ggplot2
 
-narccapMAP <- function(datos, var, year, month, type) {
+narccapMAP <- function(datos, var, year, month) {
   lat <- c(min(datos$lat), max(datos$lat))
   long <- c(min(datos$lon), max(datos$lon)) - 360
   bbox <- make_bbox(long, lat, f = 0.05)
