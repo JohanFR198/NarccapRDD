@@ -8,6 +8,8 @@
 #' joinRGdata(globaldata, regionaldata)
 
 joinRGdata <- function(var,varreg){
+  c <- colnames(varreg)[3]
+  c1 <- colnames(var)[5]
   gridglobal <- var %>% select(lon,lat) %>% distinct(lat,lon) ##Genera la cuadricula de los datos del modelo global.
   gridglobalsp <- SpatialPixels(SpatialPoints(gridglobal),tolerance = 1e-4)
 

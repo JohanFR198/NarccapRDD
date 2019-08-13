@@ -4,11 +4,12 @@
 #' @keywords datasets, download, data
 #' @export
 #' @param PATH Is the directory where is located the .nc files of a same variable
+#' @param VARNAME String, is the name of the variable in the dataset
 #' @examples
 #' NC2DF("~/PrecipitationGlobalModelData")
 #' @import dplyr stringr  ncdf4 lubridate reshape2 sp
 
-NC2DFG <- function(PATH){
+NC2DFG <- function(PATH, VARNAME){
   blatitude <- c(19.12639, 74.40000)
   blongitude <- c(198.6576, 326.4000)
   dirbase <- PATH
@@ -17,6 +18,7 @@ NC2DFG <- function(PATH){
   var <- NULL
 
   c <- sub("\\_.*", "", listfilesg[1])
+  c <- VARNAME
   fecha <- '1870-01-01'
   for (i in 1:length(listfilesg)) {
     show(paste0('Construccion datos mensuales-', i))
@@ -48,6 +50,7 @@ NC2DFG <- function(PATH){
 
     var <- bind_rows(var, var_pre)
   }
+colnames(var) <- c("Year", "Month", "lon", "lat", VARNAME )
 assign(paste(c, "Global"),var)
 rm(var)
 

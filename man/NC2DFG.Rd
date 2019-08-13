@@ -4,10 +4,12 @@
 \alias{NC2DFG}
 \title{This  function coverts the .nc downloaded  from NARCCAP  in a data.frame object.}
 \usage{
-NC2DFG(PATH)
+NC2DFG(PATH, VARNAME)
 }
 \arguments{
 \item{PATH}{Is the directory where is located the .nc files of a same variable}
+
+\item{VARNAME}{String, is the name of the variable in the dataset}
 }
 \description{
 This proccess may require high RAM capacity
