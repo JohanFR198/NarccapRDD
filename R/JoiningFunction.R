@@ -29,7 +29,7 @@ joinRGdata <- function(var,varreg){
   VTot <- varreg %>% left_join(var,by = c("Year", "Month", "indicegrid")) %>%
     select(Year,Month,paste(c1,'regional'),lat=lat.x,lon=lon.x,paste(c,'global'), indicegrid) ##Une los archivos por medio del año, mes e indice de cuadricula
 
-  assign("JoinnedDF",VTot)
+  assign("JoinnedDF",VTot, envir=.GlobalEnv)
   rm(VTot)
 
 }
