@@ -25,7 +25,7 @@ VisualizeDATA <- function(datos, var, year, month, type) {
                                                color = "#56B4E9",
                                                bins = 500
                                              ) + theme_bw() + ylab("Cuenta") + xlab("Índice en el Espacio")
-    G5
+    return(G5)
     dev.off()
   }
   else if (type == "map") {
@@ -68,7 +68,7 @@ VisualizeDATA <- function(datos, var, year, month, type) {
         title = paste("MCR - Temperatura en", mes[MM], "de", YY)
       ) +
       theme_classic()
-    G6
+    return(G6)
     dev.off()
   }
 }
