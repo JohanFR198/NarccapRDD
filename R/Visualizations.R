@@ -15,7 +15,6 @@
 
 VisualizeDATA <- function(datos, var, year, month, type) {
   if (type == "counts") {
-    png(filename = "Gr5.png")
     B <- PRtot %>% group_by(indicegrid, PRglobal) %>% summarise(n = n())
     G5 <-
       ggplot(data = NULL) + geom_histogram(aes(x = indicegrid), bins = 500, color =
@@ -26,7 +25,6 @@ VisualizeDATA <- function(datos, var, year, month, type) {
                                                bins = 500
                                              ) + theme_bw() + ylab("Cuenta") + xlab("Índice en el Espacio")
     return(G5)
-    dev.off()
   }
   else if (type == "map") {
     lat <- c(min(datos$lat), max(datos$lat))
@@ -55,7 +53,6 @@ VisualizeDATA <- function(datos, var, year, month, type) {
       "noviembre",
       "diciembre"
     )
-    png(filename = "Gr6.png")
     G6 <-
       ggmap(b) + geom_point(data = datos[datos$Year == YY &
                                            datos$Month == MM, ],
@@ -69,6 +66,5 @@ VisualizeDATA <- function(datos, var, year, month, type) {
       ) +
       theme_classic()
     return(G6)
-    dev.off()
   }
 }
