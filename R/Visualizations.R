@@ -45,7 +45,7 @@ narccapMAP <- function(datos, var, year, month) {
                                          datos$Month == MM, ],
                           aes(lon - 360, lat, color = eval(as.name(var))),
                           alpha = 0.9) +
-    scale_color_viridis_c() +
+    scale_color_viridis_c(var) +
     labs(
       x = "Longitud",
       y = "Latitud",
