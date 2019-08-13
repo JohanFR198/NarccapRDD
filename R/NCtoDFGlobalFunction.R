@@ -1,7 +1,6 @@
 #' This  function coverts the .nc downloaded  from NARCCAP  in a data.frame object.
-#' This proccess may require high RAM capacity
 #'
-
+#' This proccess may require high RAM capacity
 #' @keywords datasets, download, data
 #' @export
 #' @param PATH Is the directory where is located the .nc files of a same variable

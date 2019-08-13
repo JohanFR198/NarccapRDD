@@ -2,8 +2,7 @@
 % Please edit documentation in R/NCtoDFGlobalFunction.R
 \name{NC2DFG}
 \alias{NC2DFG}
-\title{This  function coverts the .nc downloaded  from NARCCAP  in a data.frame object.
-This proccess may require high RAM capacity}
+\title{This  function coverts the .nc downloaded  from NARCCAP  in a data.frame object.}
 \usage{
 NC2DFG(PATH)
 }
@@ -11,7 +10,6 @@ NC2DFG(PATH)
 \item{PATH}{Is the directory where is located the .nc files of a same variable}
 }
 \description{
-This  function coverts the .nc downloaded  from NARCCAP  in a data.frame object.
 This proccess may require high RAM capacity
 }
 \examples{
