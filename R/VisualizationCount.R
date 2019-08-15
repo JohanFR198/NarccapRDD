@@ -17,6 +17,7 @@
 
 narccapCOUNT <- function(datos, year, month){
 
+  str_detect(colnames(datos), "global")
   B <- datos %>% group_by(indicegrid, datos[,6]) %>% summarise(n = n())
   G5 <-
     ggplot(data = NULL) + geom_histogram(aes(x = indicegrid), bins = 500, color =
