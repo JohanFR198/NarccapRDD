@@ -4,16 +4,16 @@
 \alias{narccapMAP}
 \title{narccapMAP function generates a map of the chosen variable in a specific month and year}
 \usage{
-narccapMAP(datos, var, year, month)
+narccapMAP(data, var, year, month)
 }
 \arguments{
+\item{data}{Data frame objet generated with NC2DF function}
+
 \item{var}{Name of the variable chosen to be visualized}
 
 \item{year}{A year from 1968 to 1999}
 
 \item{month}{Number of the month you want}
-
-\item{data}{Data frame objet generated with NC2DF function}
 }
 \description{
 narccapMAP function generates a map of the chosen variable in a specific month and year

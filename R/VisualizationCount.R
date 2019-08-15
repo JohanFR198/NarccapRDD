@@ -15,11 +15,11 @@
 
 
 
-narccapCOUNT <- function(datos, year, month){
-  A <- colnames(datos)[str_detect(colnames(datos), "global")]
-  B <- datos %>% group_by(indicegrid, eval(as.name(A))) %>% summarise(n = n())
+narccapCOUNT <- function(data, year, month){
+  A <- colnames(data)[str_detect(colnames(data), "global")]
+  B <- data %>% group_by(indicegrid, eval(as.name(A))) %>% summarise(n = n())
   G5 <-
-    ggplot(data = datos) + geom_histogram(aes(x = indicegrid), bins = 500, color =
+    ggplot(data = data) + geom_histogram(aes(x = indicegrid), bins = 500, color =
                                            "#E69F00") + geom_histogram(
                                              data = B,
                                              aes(x = indicegrid),

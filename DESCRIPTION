@@ -25,3 +25,5 @@ Imports:
     curl,
     rlang,
     xml2
+Suggests: 
+    testthat (>= 2.1.0)

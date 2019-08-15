@@ -13,9 +13,9 @@
 #' @examples
 #' @import dplyr stringr  ncdf4 lubridate reshape2 sp ggmap ggplot2
 
-narccapMAP <- function(datos, var, year, month) {
-  lat <- c(min(datos$lat), max(datos$lat))
-  long <- c(min(datos$lon), max(datos$lon)) - 360
+narccapMAP <- function(data, var, year, month) {
+  lat <- c(min(data$lat), max(data$lat))
+  long <- c(min(data$lon), max(data$lon)) - 360
   bbox <- make_bbox(long, lat, f = 0.05)
   b <-
     get_map(bbox,
@@ -41,8 +41,8 @@ narccapMAP <- function(datos, var, year, month) {
     "diciembre"
   )
   G6 <-
-    ggmap(b) + geom_point(data = datos[datos$Year == YY &
-                                         datos$Month == MM, ],
+    ggmap(b) + geom_point(data = data[data$Year == YY &
+                                         data$Month == MM, ],
                           aes(lon - 360, lat, color = eval(as.name(var))),
                           alpha = 0.9) +
     scale_color_viridis_c(var) +
