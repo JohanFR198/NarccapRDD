@@ -1,3 +1,6 @@
 test_that("Function joins data frames", {
-  expect_equal(2 * 2, 4)
+  load("data/PRECL Global.rda")
+  load("data/sic Regional.rda")
+  expect_is(joinRGdata(`PRECL Global`, `sic Regional`), "data.frame")
 })
+
