@@ -2,7 +2,7 @@
 % Please edit documentation in R/NCtoDFfunction.R
 \name{NC2DFR}
 \alias{NC2DFR}
-\title{DESCRIPTION OF THE FUNCTION}
+\title{Convert the narccap nc file in a data frame}
 \usage{
 NC2DFR(PATH)
 }
@@ -10,7 +10,8 @@ NC2DFR(PATH)
 \item{PATH}{Is the directory where is located the .nc files of a same variable}
 }
 \description{
-DESCRIPTION OF THE FUNCTION
+This  function coverts the .nc downloaded  from NARCCAP regional models in a data.frame object.
+This proccess may require high RAM memory capacity
 }
 \examples{
 NC2DFR("~/RegionalModelPrecipitation")

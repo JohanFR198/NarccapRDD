@@ -18,6 +18,13 @@ narccapCount function generates a graph
 that compares the number of global points
 with the number of regional points
 }
+\examples{
+
+###Not run
+joinRGdata(globaldata, regionaldata)
+narccapCOUNT(JoinnedDF, 1976, 11)
+
+}
 \keyword{Climate}
 \keyword{Visualization,}
 \keyword{data}

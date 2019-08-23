@@ -2,7 +2,7 @@
 % Please edit documentation in R/NCtoDFGlobalFunction.R
 \name{NC2DFG}
 \alias{NC2DFG}
-\title{This  function coverts the .nc downloaded  from NARCCAP  in a data.frame object.}
+\title{Convert the narccap nc file in a data frame}
 \usage{
 NC2DFG(PATH, VARNAME)
 }
@@ -12,7 +12,8 @@ NC2DFG(PATH, VARNAME)
 \item{VARNAME}{String, is the name of the variable in the dataset}
 }
 \description{
-This proccess may require high RAM capacity
+This  function coverts the .nc downloaded  from NARCCAP global models in a data.frame object.
+This proccess may require high RAM memory capacity
 }
 \examples{
 NC2DF("~/PrecipitationGlobalModelData")

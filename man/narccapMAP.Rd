@@ -18,6 +18,12 @@ narccapMAP(data, var, year, month)
 \description{
 narccapMAP function generates a map of the chosen variable in a specific month and year
 }
+\examples{
+
+###Not run
+narccapMAP(`RegionalData`, "sic", 1985, 1)
+
+}
 \keyword{Climate}
 \keyword{Map,}
 \keyword{Visualization,}
