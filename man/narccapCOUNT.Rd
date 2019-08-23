@@ -2,7 +2,7 @@
 % Please edit documentation in R/VisualizationCount.R
 \name{narccapCOUNT}
 \alias{narccapCOUNT}
-\title{narccapCount function generates a graph that compares the number of global points with the number of regional points}
+\title{Plot a comparison count of data observations}
 \usage{
 narccapCOUNT(data, year, month)
 }
@@ -14,7 +14,9 @@ narccapCOUNT(data, year, month)
 \item{month}{Number of the month}
 }
 \description{
-narccapCount function generates a graph that compares the number of global points with the number of regional points
+narccapCount function generates a graph
+that compares the number of global points
+with the number of regional points
 }
 \keyword{Climate}
 \keyword{Visualization,}

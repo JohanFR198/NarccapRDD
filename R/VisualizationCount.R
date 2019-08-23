@@ -1,6 +1,8 @@
-#' narccapCount function generates a graph that compares the number of global points with the number of regional points
+#' Plot a comparison count of data observations
 #'
-#'
+#' narccapCount function generates a graph
+#' that compares the number of global points
+#' with the number of regional points
 #'
 
 #' @keywords Visualization, Climate data

@@ -64,7 +64,7 @@ ShowData <- function(){
       df <- df %>% select(-c("2","3","6")) %>% separate("5", c("Year","M"),4) %>% select(-"M")
     }
     df$Year <- as.numeric(df$Year)
-    df$YearEnd <- c(df$Year[-1]-1, df$Year[length(df$Year)]+5)
+    df$YearEnd <- apply(as.matrix(df$Year), 1, function(x) ifelse(x==1968, 1970, x+5))
 
     df <- mutate(df,FullVarName=factor(df$`1`))
     levels(df$FullVarName) <- factor(var$`Full Name`)
@@ -75,3 +75,5 @@ ShowData <- function(){
   colnames(cuadro) <- c("link", "Ab.Name", "Year", "P#","YearEnd","Full Name","Size","Table", "Time","M1", "M2", "M3" ) ##Da nombre a las columnas
   return(cuadro)
 }
+
+

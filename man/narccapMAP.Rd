@@ -2,20 +2,20 @@
 % Please edit documentation in R/Visualizations.R
 \name{narccapMAP}
 \alias{narccapMAP}
-\title{narccapMAP function generates a map of the chosen variable in a specific month and year}
+\title{Visualize Narccap data in a Map}
 \usage{
 narccapMAP(data, var, year, month)
 }
 \arguments{
-\item{data}{Data frame objet generated with NC2DF function}
+\item{data}{Data frame objet generated with NC2DFR or NC2DFG functions}
 
 \item{var}{Name of the variable chosen to be visualized}
 
-\item{year}{A year from 1968 to 1999}
+\item{year}{Numeric value of the year chosen to be visualized}
 
-\item{month}{Number of the month you want}
+\item{month}{Number of the month you chosen to be visualized}
 }
-\description{
+\details{
 narccapMAP function generates a map of the chosen variable in a specific month and year
 }
 \keyword{Climate}
