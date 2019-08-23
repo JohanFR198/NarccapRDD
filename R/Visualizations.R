@@ -1,7 +1,5 @@
 #' Visualize Narccap data in a Map
 #'
-#'
-#'
 #' narccapMAP function generates a map of the chosen variable in a specific month and year
 
 #' @keywords Map, Visualization, Climate data
@@ -11,8 +9,12 @@
 #' @param var Name of the variable chosen to be visualized
 #' @param year Numeric value of the year chosen to be visualized
 #' @param month Number of the month you chosen to be visualized
-#' @examples
 #' @import dplyr stringr  ncdf4 lubridate reshape2 sp ggmap ggplot2
+#' @examples
+#'
+#' ###Not run
+#' narccapMAP(`RegionalData`, "sic", 1985, 1)
+#'
 
 narccapMAP <- function(data, var, year, month) {
   lat <- c(min(data$lat), max(data$lat))

@@ -1,8 +1,7 @@
-#' DESCRIPTION OF THE FUNCTION
+#' Convert the narccap nc file in a data frame
 #'
-#'
-#'
-#'
+#' This  function coverts the .nc downloaded  from NARCCAP regional models in a data.frame object.
+#' This proccess may require high RAM memory capacity
 
 #' @keywords datasets, download, data
 #' @export

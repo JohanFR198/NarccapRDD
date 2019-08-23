@@ -15,7 +15,7 @@ narccapMAP(data, var, year, month)
 
 \item{month}{Number of the month you chosen to be visualized}
 }
-\details{
+\description{
 narccapMAP function generates a map of the chosen variable in a specific month and year
 }
 \keyword{Climate}

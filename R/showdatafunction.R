@@ -14,6 +14,8 @@
 #' @export
 #' @import rlang dplyr rvest tidyr curl xml2
 #' @examples
+#'
+#' ###Not run
 #' ShowData()
 
 ShowData <- function(){

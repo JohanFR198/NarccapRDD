@@ -1,6 +1,8 @@
-#' This  function coverts the .nc downloaded  from NARCCAP  in a data.frame object.
+#' Convert the narccap nc file in a data frame
 #'
-#' This proccess may require high RAM capacity
+#' This  function coverts the .nc downloaded  from NARCCAP global models in a data.frame object.
+#' This proccess may require high RAM memory capacity
+#'
 #' @keywords datasets, download, data
 #' @export
 #' @param PATH Is the directory where is located the .nc files of a same variable
