@@ -12,11 +12,12 @@
 
 #' @keywords datasets, download, data
 #' @export
-#' @import rlang dplyr rvest tidyr curl xml2
+#' @import rlang dplyr rvest tidyr curl xml2 stringr
 #' @examples
 #'
 #' ###Not run
 #' ShowData()
+
 
 ShowData <- function(){
   urls <- "https://www.earthsystemgrid.org/dataset/narccap.crcm.output.ccsm.html"
@@ -33,6 +34,7 @@ ShowData <- function(){
     mutate_at(.vars=c("ext", "ext3"),tolower) %>% mutate_at(.vars=c("2"), toupper) ##Transformaciones para unificar formato
   cuadro <- NULL
   for ( i in 1: length(links1$ext)){
+    i <- 1
     url <- paste0("https://www.earthsystemgrid.org/dataset/",links1$ext[i],"/file.html")
     webpage <- read_html(url)
 
@@ -57,8 +59,8 @@ ShowData <- function(){
     M2 <- rep(links1$`2`[i], length(links))
     M3 <- rep(links1$ext2[i], length(links))
 
-    df <- tibble(links) %>% separate(links, as.character(c(1:6)), remove = F)
-    options(warn=-1)
+    df <- suppressWarnings(tibble(links) %>% separate(links, as.character(c(1:6)), remove = F))
+
     if(is.na(df$`6`[1])==T){
       df <- df %>% select(-c("2","3","5","6")) %>% separate("4", c("Year","M"),4) %>% select(-"M") %>%
         mutate(`4`="NA")
