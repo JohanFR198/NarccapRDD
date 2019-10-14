@@ -24,6 +24,11 @@ Imports:
     sp,
     curl,
     rlang,
-    xml2
+    xml2,
+    fields,
+    sf,
+    rgeos,
+    plotly,
+    raster
 Suggests: 
     testthat (>= 2.1.0)

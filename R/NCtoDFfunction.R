@@ -58,7 +58,7 @@ NC2DFR <- function(PATH){
       mutate(Year = year(Time),Month=month(Time)) %>%
       group_by(Year,Month,xc,yc) %>% summarise(m=mean(eval(as.name(c1)))) %>% ungroup()  ##Convierte la variable time en tres variables que indican el año y mes y saca la media de las observaciones para ese mes.
 
-    varreg_pre <- varreg_pre %>% left_join(latlondata,by = c('xc', 'yc')) %>%
+    varreg_pre <- varreg_pre %>% suppressWarnings(left_join(latlondata,by = c('xc', 'yc'))) %>%
       select(-xc,-yc) ##Une al cuadro las variables espaciales
 
     varreg_pre <- varreg_pre %>% mutate(ID = rep(i, dim(varreg_pre)[1]))
